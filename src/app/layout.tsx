@@ -1,11 +1,12 @@
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import 'glightbox/dist/css/glightbox.css';
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-<<<<<<< HEAD
-=======
 import TopBar from './components/TopBar';
 import Header from './components/Header';
->>>>>>> 26ce4bc (first commit)
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,15 +22,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-<<<<<<< HEAD
-      <body className={inter.className}>{children}</body>
-=======
       <body className={inter.className}>
         <TopBar />
         <Header />
         {children}
         </body>
->>>>>>> 26ce4bc (first commit)
     </html>
   );
 }
