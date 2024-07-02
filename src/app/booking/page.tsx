@@ -12,51 +12,26 @@ export default function Booking() {
     time: '',
     people: '',
     message: '',
-    validate: '',
   };
 
   const [text, setText] = useState(intialState);
+  console.log(text);
 
   const handleTextChange = (e: Event | any) => {
     const { name, value } = e.target;
-    setText({ ...text, [name]: value, validate: '' });
+    setText({ ...text, [name]: value});
   };
 
-  const handleSubmitBooking = async (e: Event | any) => {
-    e.preventDefault();
-    // simple form validation
-    if (
-      text.name === '' ||
-      text.email === '' ||
-      text.date === '' ||
-      text.time === ''
-    ) {
-      setText({ ...text, validate: 'incomplete' });
-      return;
-    }
-
-    // POST request sent
-    try {
-      const response = await fetch('http://localhost:3000/api/booking', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(text),
-      });
-
-      setText({ ...text, validate: 'loading' });
-
-      const result = await response.json();
-      if (result) {
-        setText({ ...text, validate: 'success' });
-        console.log('Success:', result);
-      }
-    } catch (error) {
-      setText({ ...text, validate: 'error' });
-      console.error('Error:', error);
-    }
-  };
+  const handleSubmitBooking = () => {
+    sessionStorage.setItem("name", text.name)
+    sessionStorage.setItem("email", text.email)
+    sessionStorage.setItem("phone", text.phone)
+    sessionStorage.setItem("date", text.date)
+    sessionStorage.setItem("time", text.time)
+    sessionStorage.setItem("people", text.people)
+    sessionStorage.setItem("message", text.message)
+    sessionStorage.setItem("test", "test")
+  }
 
   return (
     <section id="book-a-table" className="book-a-table">
@@ -64,10 +39,7 @@ export default function Booking() {
         <h1>Book Now!</h1>
 
         <form
-          onSubmit={handleSubmitBooking}
           className="booking-form"
-          data-aos="fade-up"
-          data-aos-delay="100"
         >
           <div className="row">
             <div className="col-lg-4 col-md-6 form-group">
@@ -141,27 +113,8 @@ export default function Booking() {
               onChange={handleTextChange}
             ></textarea>
           </div>
-          <div className="mb-3">
-            {text.validate === 'loading' && (
-              <div className="loading">Send Booking</div>
-            )}
-            {text.validate === 'incomplete' && (
-              <div className="error-message">
-                Please fill in all above details for booking a table
-              </div>
-            )}
-            {text.validate === 'success' && (
-              <div className="sent-message">
-                Your booking request was sent. We will call back or send an
-                Email to confirm your reservation. Thank you!
-              </div>
-            )}
-            {text.validate === 'error' && (
-              <div className="error-message">Server Error</div>
-            )}
-          </div>
           <div className="text-center">
-            <button type="submit">Book a Table</button>
+            <button type="submit" onClick={handleSubmitBooking}>Book a Table</button>
           </div>
         </form>
       </div>

@@ -19,7 +19,3 @@
     border-radius: 50px;
     font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
 }
-
-.menu #menu-filters li:last-child {
-    margin-right: 0;
-}

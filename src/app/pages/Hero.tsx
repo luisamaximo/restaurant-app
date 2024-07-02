@@ -14,10 +14,12 @@ export default function Hero() {
                     </h1>
 
                     <div className='btns'>
-                    <Link className="herobtn" href="/Menu">
+                    <Link className="herobtn" href="/menu">
                         Menu
                     </Link>
-                        <a className="herobtn" href="/booking">Book a Table</a>
+                    <Link className="herobtn" href="/booking">
+                        Book a table
+                    </Link>
                     </div>
                 </div>
             </div>

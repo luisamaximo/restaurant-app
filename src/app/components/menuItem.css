@@ -87,3 +87,14 @@
 .menu #menu-filters li:hover {
     color: #cda45e;
 }
+
+h1 {
+    font-size: 28px;
+    margin: 80px;
+    padding: 0;
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}
