@@ -3,8 +3,18 @@
 import React, { useState } from 'react';
 import './booking.css';
 
+interface BookingFormState {
+  name: string;
+  email: string;
+  phone: string;
+  date: string;
+  time: string;
+  people: string;
+  message: string;
+}
+
 export default function Booking() {
-  const intialState = {
+  const initialState: BookingFormState = {
     name: '',
     email: '',
     phone: '',
@@ -14,33 +24,43 @@ export default function Booking() {
     message: '',
   };
 
-  const [text, setText] = useState(intialState);
+  const [text, setText] = useState<BookingFormState>(initialState);
   console.log(text);
 
-  const handleTextChange = (e: Event | any) => {
+  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setText({ ...text, [name]: value});
+    setText({ ...text, [name]: value });
   };
 
-  const handleSubmitBooking = () => {
-    sessionStorage.setItem("name", text.name)
-    sessionStorage.setItem("email", text.email)
-    sessionStorage.setItem("phone", text.phone)
-    sessionStorage.setItem("date", text.date)
-    sessionStorage.setItem("time", text.time)
-    sessionStorage.setItem("people", text.people)
-    sessionStorage.setItem("message", text.message)
-    sessionStorage.setItem("test", "test")
-  }
+  const handleSubmitBooking = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('/api/bookTable', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(text),
+      });
+
+      if (response.ok) {
+        alert('Booking saved successfully');
+        setText(initialState); // Clear the form
+      } else {
+        alert('Failed to save booking');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred');
+    }
+  };
 
   return (
     <section id="book-a-table" className="book-a-table">
       <div className="container" data-aos="fade-up">
         <h1>Book Now!</h1>
 
-        <form
-          className="booking-form"
-        >
+        <form className="booking-form" onSubmit={handleSubmitBooking}>
           <div className="row">
             <div className="col-lg-4 col-md-6 form-group">
               <input
@@ -114,7 +134,7 @@ export default function Booking() {
             ></textarea>
           </div>
           <div className="text-center">
-            <button type="submit" onClick={handleSubmitBooking}>Book a Table</button>
+            <button type="submit">Book a Table</button>
           </div>
         </form>
       </div>
