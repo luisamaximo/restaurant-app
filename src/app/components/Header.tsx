@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import './header.css';
 
 export default function Header() {
@@ -10,6 +11,11 @@ export default function Header() {
                 <h1 className='logo me-auto me-lg-0'>
                     <a href="/">Bistro Restaurant</a>
                 </h1>
+                <div className='btns'>
+                    <Link className="herobtn" href="/takeaway">
+                        Order Online!
+                    </Link>
+            </div>
             </div>
         </header>
     )

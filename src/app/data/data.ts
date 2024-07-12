@@ -46,12 +46,6 @@ export const filters = [
       category: "salads",
       active: false
     },
-    {
-      id: 5,
-      name: "Specialty",
-      category: "specialty",
-      active: false
-    }
   ]
   
   export const menu: MenuType = [
@@ -88,7 +82,7 @@ export const filters = [
       price: 16.99,
       preview: '/assets/images/menu/SalmonDillSauce.jpeg',
       ingredients: 'Salmon, Parsley, Dill, Chives, Panko Breadcrumbs, Lemon zest, Milk and Aspargus',
-      category: "specialty",
+      category: "main",
       description: "Salmon, Parsley, Dill, Chives, Panko Breadcrumbs, Lemon zest, Milk and Aspargus",
     },
     {
@@ -106,24 +100,7 @@ export const filters = [
       price: 10.99,
       preview: '/assets/images/menu/MangoSalad.jpeg',
       ingredients: 'Mango, Baby spinach, Cucumber, Red bell pepper, Shallots, Pomegranate and Fresh herbs',
-      category: "salads",
+      category: "salads", 
       description: "Mango, Baby spinach, Cucumber, Red bell pepper, Shallots, Pomegranate and Fresh herbs",
     },
   ]
-
-  export const bookings = [
-    {
-      id: 1,
-      details: {
-        name: 'Example Name',
-        email: 'info@example.com',
-        phone: '12345678',
-        date: '2024-2-06',
-        time: '11:30',
-        people: 3,
-        message: `Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur`,
-      },
-    },
-  ];
-  
