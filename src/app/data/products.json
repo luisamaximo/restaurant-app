@@ -1,0 +1,56 @@
+[
+    {
+      "id": 1,
+      "description": "Mozzarella cheese sticks coated in Italian breadcrumbs",
+      "image": "/assets/images/menu/MozzarellaSticks.jpeg",
+      "price": 6.99,
+      "name": "Mozzarella sticks",
+      "amount": 0,
+      "category": "starter"
+    },
+    {
+      "id": 2,
+      "description": "Porcini mushrooms, Chestnut mushrooms, Onion, White wine, Arborio rice, Parsley and Grana Padano cheese",
+      "image": "/assets/images/menu/MushroomRisotto.jpeg",
+      "price": 12.99,
+      "name": "Mushroom Risotto",
+      "amount": 0,
+      "category": "main"
+    },
+    {
+      "id": 3,
+      "description": "Chicken breast, Romaine lettuce, Parmesan cheese, Anchovies and special sauce",
+      "image": "/assets/images/menu/CaesarSalad.jpeg",
+      "price": 12.99,
+      "name": "Caesar Salad",
+      "amount": 0,
+      "category": "salad"
+    },
+    {
+      "id": 4,
+      "description": "Salmon, Parsley, Dill, Chives, Panko Breadcrumbs, Lemon zest, Milk and Aspargus",
+      "image": "/assets/images/menu/SalmonDillSauce.jpeg",
+      "price": 39.99,
+      "name": "Herb-Crusted Salmon with Lemon Dill Sauce and Aspargus",
+      "amount": 0,
+      "category": "main"
+    },
+    {
+      "id": 5,
+      "description": "Ribeye steak (10-12 ounces), Herbs and Fried Russet fries",
+      "image": "/assets/images/menu/SteakAndFries.jpeg",
+      "price": 12.99,
+      "name": "Steak and Fries",
+      "amount": 0,
+      "category": "main"
+    },
+    {
+      "id": 6,
+      "description": "Mango, Baby spinach, Cucumber, Red bell pepper, Shallots, Pomegranate and Fresh herbs",
+      "image": "/assets/images/menu/MangoSalad.jpeg",
+      "price": 10.99,
+      "name": "Mango Salad",
+      "amount": 0,
+      "category": "salad"
+    }
+  ]

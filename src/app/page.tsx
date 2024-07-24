@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Hero from './pages/Hero';
+import Hero from './homepage/Homepage';
 import Menu from './menu/page';
 import Booking from './booking/page';
 

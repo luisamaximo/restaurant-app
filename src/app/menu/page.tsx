@@ -3,33 +3,19 @@
 import { useState, useEffect } from 'react'
 import { filters } from '../data/data'
 import { ItemType } from '../types/menuTypes'
+import { menu } from '../data/data'
 
-import MenuItem from '../components/MenuItem'
+import MenuItem from '../components/MenuItem/MenuItem'
 
 export default function Menu() {
-    const [data, setData] = useState([])
-    const [items, setItems] = useState([])
-
-    const getMenuData = () => {
-        fetch('http://localhost:3000/api/menu')
-            .then((res) => res.json())
-            .then((menu) => setData(menu))
-            .catch((e) => console.log(e.message))
-    } //fetching the menu data from my menu data file  
-    useEffect(() => {
-        getMenuData()
-    }, []) // calls getMenuData when the component renders to get the initial menu data
-
-    useEffect(() => {
-        setItems(data)
-    }, [data]) // Updates the items state variable whenever the data state changes. This ensures that items is in sync with data.
+    const [items, setItems] = useState(menu)
 
     const handleFilterChange = (category: string) => {
         if (category === 'all') {
-            setItems(data);
+            setItems(menu);
         } else {
             setItems(
-                data.filter(
+                menu.filter(
                     (item: { category: string }) => item.category === category
                 )
             );

@@ -19,3 +19,16 @@
     border-radius: 50px;
     font-family: "Playfair Display", Georgia, 'Times New Roman', Times, serif;
 }
+
+.menu-content {
+    color: white;
+}
+
+h1 {
+        font-size: 28px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: 300;
+        font-family: 'Courier New', Courier, monospace;
+}

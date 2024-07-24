@@ -1,7 +1,6 @@
-'use client';
-
+'use client'
 import React, { useState } from 'react';
-import './booking.css';
+import './booking.css'
 
 interface BookingFormState {
   name: string;
@@ -24,41 +23,29 @@ export default function Booking() {
     message: '',
   };
 
-  const [text, setText] = useState<BookingFormState>(initialState);
-  console.log(text);
+  const [text, setText] = useState(initialState);
 
   const handleTextChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setText({ ...text, [name]: value });
   };
 
-  const handleSubmitBooking = async (e: React.FormEvent) => {
-    e.preventDefault();
-    try {
-      const response = await fetch('/api/bookTable', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(text),
-      });
-
-      if (response.ok) {
-        alert('Booking saved successfully');
-        setText(initialState); // Clear the form
-      } else {
-        alert('Failed to save booking');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred');
-    }
+  const handleSubmitBooking = (e: React.FormEvent<HTMLFormElement>) => {
+    // Get the existing bookings from local storage or initialize an empty array if none exist
+    const existingBookings = JSON.parse(localStorage.getItem('bookings') || '[]');
+    // Add the new booking to the array
+    existingBookings.push(text);
+    // Save the updated array back to local storage
+    localStorage.setItem('bookings', JSON.stringify(existingBookings));
+    // Reset the form
+    setText(initialState);
+    alert('Booking submitted successfully');
   };
 
   return (
     <section id="book-a-table" className="book-a-table">
       <div className="container" data-aos="fade-up">
-        <h1>Book Now!</h1>
+        <h1>Book a table</h1>
 
         <form className="booking-form" onSubmit={handleSubmitBooking}>
           <div className="row">

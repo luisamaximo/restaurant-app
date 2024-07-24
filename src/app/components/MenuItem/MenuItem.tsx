@@ -1,6 +1,6 @@
 import React from "react";
 import './menuItem.css';
-import { MenuItemProps } from "../types/menuTypes";
+import { MenuItemProps } from "../../types/menuTypes";
 
 export default function MenuItem({
     item,
@@ -10,7 +10,7 @@ export default function MenuItem({
             <img src={item.preview} className="menu-img" alt="" />  {/*  change this to an Image tag */}
             <div className="menu-content">
                 {item.name}
-                <span>${item.price}</span>
+                <span>£{item.price}</span>
             </div>
             <div className="menu-ingredients">{item.description}</div>
         </div>

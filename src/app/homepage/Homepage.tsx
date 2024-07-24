@@ -1,14 +1,14 @@
 'use client'
 
 import Link from 'next/link';
-import './hero.css';
+import './homepage.css';
 
 export default function Hero() {
     return (
     <section id="hero" className='d-flex align-items-center'>
-        <div className='container position-relative text-center text-lg-start'>
-            <div className='row'>
-                <div className='col-lg-8'>
+        <div className='container position-relative'>
+            <div>
+                <div>
                     <h1>
                         Welcome to Bistro <span>Restaurant</span>
                     </h1>

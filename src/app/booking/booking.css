@@ -1,47 +1,5 @@
-.book-a-table .booking-form {
-  width: 100%;
-}
-
-.book-a-table .booking-form .form-group {
-  padding-bottom: 8px;
-}
-
-.book-a-table .booking-form .error-message {
-  color: #fff;
-  background: #cda45e;
-  text-align: left;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.book-a-table .booking-form .error-message br + br {
-  margin-top: 25px;
-}
-
-.book-a-table .booking-form .sent-message {
-  color: #fff;
-  background: #18d26e;
-  text-align: center;
-  padding: 15px;
-  font-weight: 600;
-}
-
-.book-a-table .booking-form .loading {
-  text-align: center;
-  padding: 15px;
-}
-
-.book-a-table .booking-form .loading:before {
-  content: '';
-  display: inline-block;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  margin: 0 10px -6px 0;
-  border: 3px solid #cda45e;
-  border-top-color: #1a1814;
-  -webkit-animation: animate-loading 1s linear infinite;
-  animation: animate-loading 1s linear infinite;
+.book-a-table {
+  margin-top: 80px;
 }
 
 .book-a-table .booking-form input,
@@ -58,28 +16,11 @@
   filter: invert(1);
 }
 
-.book-a-table .booking-form input[type='date'],
-.book-a-table .booking-form input[type='time'] {
+.book-a-table .booking-form input::-webkit-input-placeholder {
   color: #a49b89;
 }
 
-.book-a-table .booking-form input::-webkit-input-placeholder,
-.book-a-table .booking-form textarea::-webkit-input-placeholder {
-  color: #a49b89;
-}
-
-.book-a-table .booking-form input::-moz-placeholder,
-.book-a-table .booking-form textarea::-moz-placeholder {
-  color: #a49b89;
-}
-
-.book-a-table .booking-form input::placeholder,
-.book-a-table .booking-form textarea::placeholder {
-  color: #a49b89;
-}
-
-.book-a-table .booking-form input:focus,
-.book-a-table .booking-form textarea:focus {
+.book-a-table .booking-form {
   border-color: #cda45e;
 }
 
@@ -87,9 +28,6 @@
   height: 44px;
 }
 
-.book-a-table .booking-form textarea {
-  padding: 10px 12px;
-}
 
 .book-a-table .booking-form button[type='submit'] {
   background: #cda45e;
@@ -98,4 +36,17 @@
   color: #fff;
   transition: 0.4s;
   border-radius: 50px;
+  margin-top: 100px;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace;
 }
