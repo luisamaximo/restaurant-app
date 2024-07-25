@@ -19,3 +19,13 @@ export type MenuType = {
     category: string,
     description: string,
 }[]
+
+export type CartItemType = {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+    price: number;
+    amount: number;
+    category: string;
+  };

@@ -11,18 +11,10 @@ import Badge from '@mui/material/Badge';
 import { Wrapper, StyledButton } from './takeaway.styles';
 import productData from '../data/products.json'; 
 // Types
-export type CartItemType = {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-  amount: number;
-  category: string;
-};
+import { CartItemType } from '../types/menuTypes';
 
 
-const App = () => {
+const Takeaway = () => {
     const [cartOpen, setCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([] as CartItemType[]);
     const [products, setProducts] = useState<CartItemType[]>([]);
@@ -88,4 +80,4 @@ const App = () => {
     );
   };
   
-  export default App;
+  export default Takeaway;
