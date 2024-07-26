@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { filters } from '../data/data'
 import { ItemType } from '../types/menuTypes'
 import { menu } from '../data/data'

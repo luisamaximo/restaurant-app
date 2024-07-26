@@ -22,10 +22,10 @@ describe("CartItem tests", () => {
         expect(screen.getByText("Total: £6.99")).toBeDefined()
       });
 
-    //   it('should increase price and quantity when you click the plus button', () => {
+      //   it('should increase price and quantity when you click the plus button', () => {
     //     render(<CartItem item={mockItem} addToCart={mockAddToCart} removeFromCart={() => {}} />)
     //     const plusButton = screen.getByTestId("plus")
     //     fireEvent.click(plusButton);
     //     expect(screen.getByText("Total: 12.98")).toBeInTheDocument()
     //   });
-});
+        });

@@ -30,5 +30,6 @@ describe("CartItem tests", () => {
     it('should have display items added to the cart', () => {
         render(<Cart cartItems={mockItem} addToCart={() => {}} removeFromCart={() => {}}/>)
         expect(screen.getByText('Mozzarella sticks')).toBeDefined()
+        expect(screen.getByRole('heading', { level: 2, name: 'Total: £6.99' })).toBeDefined() //using getByRole as there are two 'Total' when you add an item on the cart, one total per item and one final total for the whole purchase    
       });
 });

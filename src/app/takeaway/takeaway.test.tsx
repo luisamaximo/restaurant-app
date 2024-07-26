@@ -9,9 +9,4 @@ describe("menu tests", () => {
         render(<Takeaway />)
         expect(screen.getByText('Mozzarella sticks')).toBeDefined()
       });
-
-    // it('should render the add to cart button', () => {
-    //     render(<Takeaway />)
-    //     expect(screen.getByText('add to cart')).toBeDefined()
-    // });
 })
