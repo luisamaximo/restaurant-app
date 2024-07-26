@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "node server/index.js",
     "lint": "next lint",
     "test": "vitest"
   },
@@ -18,6 +18,9 @@
     "@types/styled-components": "^5.1.34",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "fs-extra": "^11.2.0",
     "glightbox": "^3.3.0",
     "next": "14.2.4",
     "react": "^18",
@@ -41,5 +44,6 @@
     "jsdom": "^24.1.1",
     "typescript": "^5",
     "vitest": "^2.0.4"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

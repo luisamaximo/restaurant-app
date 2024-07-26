@@ -10,26 +10,14 @@ describe("menu tests", () => {
         render(<Menu />)
         expect(screen.getByRole('heading', { level: 1, name: 'Menu' })).toBeDefined()
       });
-    
-    it('should display all main options', async () => {
+
+    it('', async () => {
         render(<Menu />);
-        await waitFor(() => screen.getAllByText(/main/i));
-        const mainFilter = screen.getAllByText(/main/i)[0];
-        fireEvent.click(mainFilter);
-        await waitFor(() => {
-            expect(screen.getByText(/Steak and Fries/i)).toBeDefined();
-        });
-        await waitFor(() => {
-            expect(screen.getByText(/Herb-Crusted Salmon with Lemon Dill Sauce and Aspargus/i)).toBeDefined();
-        });
-    });
-    it('should display all options', async () => {
-        render(<Menu />);
-        await waitFor(() => screen.getAllByText(/all/i));
-        const mainFilter = screen.getAllByText(/all/i)[0];
-        fireEvent.click(mainFilter);
-        await waitFor(() => {
-            expect(screen.getByText(/Mozzarella sticks/i)).toBeDefined(); //should I add every single dish like I did for main?
-        });
+        expect(screen.getByText(/Mozzarella sticks/i)).toBeDefined();
+        expect(screen.getByText(/Caesar Salad/i)).toBeDefined();
+        const startersFilter = screen.getAllByText(/starters/i)[0];
+        fireEvent.click(startersFilter);
+        expect(screen.getByText(/Mozzarella sticks/i)).toBeDefined();
+        expect(screen.queryByText(/Caesar Salad/i)).toBeNull();
     });
 })

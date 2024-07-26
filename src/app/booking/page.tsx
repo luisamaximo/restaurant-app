@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import './booking.css'
 
+
 interface BookingFormState {
   name: string;
   email: string;
@@ -30,13 +31,24 @@ export default function Booking() {
     setText({ ...text, [name]: value });
   };
 
-  const handleSubmitBooking = (e: React.FormEvent<HTMLFormElement>) => {
-    // Get the existing bookings from local storage or initialize an empty array if none exist
-    const existingBookings = JSON.parse(localStorage.getItem('bookings') || '[]');
-    // Add the new booking to the array
-    existingBookings.push(text);
-    // Save the updated array back to local storage
-    localStorage.setItem('bookings', JSON.stringify(existingBookings));
+  const handleSubmitBooking = async (e: React.FormEvent<HTMLFormElement>) => {
+      // Get the existing bookings from the API or initialize an empty array if none exist
+    const response = await fetch('http://localhost:3001/api')
+    .then((res) => {
+      return res.json()
+    })
+    .then((data) => {
+      //Transforming data from fetch (string) into a Json object
+      const existingBookings: BookingFormState[] = JSON.parse(data.data)
+      //Pushing the new data into our existingBookings array
+      existingBookings.push(text);
+      //Post request which will write our existingBookings into our booking.json file
+      fetch("http://localhost:3001/api",
+        {method: "POST", body: JSON.stringify(existingBookings), headers: {
+          'Content-Type': 'application/json'
+        }})
+    })
+    
     // Reset the form
     setText(initialState);
     alert('Booking submitted successfully');
