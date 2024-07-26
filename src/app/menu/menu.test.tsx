@@ -1,6 +1,6 @@
 import { expect } from 'vitest'
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
-import Menu from '../menu/page'
+import Menu from './page'
 import { filters } from '../data/data';
 
 
