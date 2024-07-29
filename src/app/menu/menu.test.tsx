@@ -11,7 +11,7 @@ describe("menu tests", () => {
         expect(screen.getByRole('heading', { level: 1, name: 'Menu' })).toBeDefined()
       });
 
-    it('', async () => {
+    it('should display all dishes by default and when filter is clicked it should only show the dishes that fit on that category', async () => {
         render(<Menu />);
         expect(screen.getByText(/Mozzarella sticks/i)).toBeDefined();
         expect(screen.getByText(/Caesar Salad/i)).toBeDefined();

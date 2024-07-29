@@ -13,19 +13,12 @@ describe("CartItem tests", () => {
         "category": "starter"
       }
 
-    const mockAddToCart = () => {};
-
     it('should render the CartItem component', () => {
         render(<CartItem item={mockItem} addToCart={() => {}} removeFromCart={() => {}}/>)
         expect(screen.getByText('Mozzarella sticks')).toBeDefined()
         expect(screen.getByText("Price: £6.99")).toBeDefined()
         expect(screen.getByText("Total: £6.99")).toBeDefined()
+        expect(screen.getByTestId("plus")).toBeDefined()
+        expect(screen.getByTestId("minus")).toBeDefined()
       });
-
-      //   it('should increase price and quantity when you click the plus button', () => {
-    //     render(<CartItem item={mockItem} addToCart={mockAddToCart} removeFromCart={() => {}} />)
-    //     const plusButton = screen.getByTestId("plus")
-    //     fireEvent.click(plusButton);
-    //     expect(screen.getByText("Total: 12.98")).toBeInTheDocument()
-    //   });
-        });
+});

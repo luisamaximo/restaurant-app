@@ -13,10 +13,10 @@ describe("MenuItem tests", () => {
         description: "Mozzarella cheese sticks coated in Italian breadcrumbs ",
       }
 
-    it('should render the CartItem component', () => {
+    it('should render the MenuItem component', () => {
         render(<MenuItem key={mockItem.id} item={mockItem}/>)
         expect(screen.getByText('Mozzarella sticks')).toBeDefined()
         expect(screen.getByText('Mozzarella cheese sticks coated in Italian breadcrumbs')).toBeDefined()
-        expect(screen.getByText('£6.99')).toBeDefined() //do we test image?
+        expect(screen.getByText('£6.99')).toBeDefined() 
       });
     })

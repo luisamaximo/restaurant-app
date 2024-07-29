@@ -18,6 +18,4 @@ describe("Item tests", () => {
         expect(screen.getByText('Mozzarella cheese sticks coated in Italian breadcrumbs')).toBeDefined()
         expect(screen.getByText("£6.99")).toBeDefined()
       });
-
-    
 });
