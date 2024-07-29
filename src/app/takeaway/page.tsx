@@ -15,11 +15,6 @@ import { CartItemType } from '../types/menuTypes';
 const Takeaway: React.FC = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [cartItems, setCartItems] = useState([] as CartItemType[]);
-  const [products, setProducts] = useState<CartItemType[]>([]);
-
-  useEffect(() => {
-    setProducts(productData);
-  }, []);
 
   const getTotalItems = (items: CartItemType[]) =>
     items.reduce((ack: number, item) => ack + item.amount, 0);
@@ -95,7 +90,7 @@ const Takeaway: React.FC = () => {
         </Drawer>
           <StyledBadge data-testid='cartbutton' badgeContent={getTotalItems(cartItems)} color='warning' onClick={() => setCartOpen(true)}/>
         <Grid container spacing={3}>
-          {products.map(item => (
+          {productData.map(item => (
             <Grid item key={item.id} xs={12} sm={4}>
               <Item item={item} handleAddToCart={handleAddToCart} />
             </Grid>
