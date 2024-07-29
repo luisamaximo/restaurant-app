@@ -1,13 +1,17 @@
 import styled from 'styled-components';
-import IconButton from '@mui/material/IconButton';
+import { Badge } from '@mui/material';
 
 export const Wrapper = styled.div`
   margin: 40px;
 `;
 
-export const StyledButton = styled(IconButton)`
-  position: fixed;
-  z-index: 100;
-  right: 20px;
-  top: 20px;
-`;
+export const StyledBadge = styled(Badge)({
+   '& .MuiBadge-badge': {
+    position: 'fixed',
+    right: '20px',
+    top: '20px',
+    transform: 'scale(1.5)', // Adjust the scale to make the badge bigger
+    cursor: 'pointer'
+  }
+}
+);

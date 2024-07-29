@@ -5,6 +5,7 @@
     background-size: cover;
     position: relative;
     padding: 0;
+    background-attachment: fixed;
 }
 
 #hero:before {
@@ -23,12 +24,6 @@
 
 .herobtn {
     margin: 0 20px;
-}
-
-@media (max-width: 992px) {
-    #hero .container {
-        padding-top: 98px;
-    }
 }
 
 #hero h1 {
@@ -52,32 +47,4 @@
 
 #hero .btns {
     margin-top: 30px;
-}
-
-
-@media (min-width: 1024px) {
-    #hero {
-        background-attachment: fixed;
-    }
-}
-
-@media (max-width: 500px) {
-    #hero {
-        height: auto;
-    }
-    #hero .container {
-        padding-top: 130px;
-        padding-bottom: 60px;
-    }
-}
-
-@media (max-width: 768px) {
-    #hero h1 {
-        font-size: 28px;
-        line-height: 36px;
-    }
-    #hero h2 {
-        font-size: 18px;
-        line-height: 24px;
-    }
 }

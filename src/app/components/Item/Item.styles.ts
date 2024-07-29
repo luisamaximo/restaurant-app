@@ -24,4 +24,13 @@ export const Wrapper = styled.div`
     padding: 1rem;
     height: 100%;
   }
+
+  h3 {
+    font-size: 28px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-weight: 300;
+    font-family: 'Courier New', Courier, monospace;
+  }
 `;
