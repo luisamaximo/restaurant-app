@@ -55,8 +55,8 @@ export default function Booking() {
   };
 
   return (
-    <section id="book-a-table" className="book-a-table">
-      <div className="container" data-aos="fade-up">
+    <section className="book-a-table">
+      <div className="container">
         <h1>Book a table</h1>
 
         <form className="booking-form" onSubmit={handleSubmitBooking}>
