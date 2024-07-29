@@ -2,7 +2,7 @@ import { expect, test } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import Header from '../Header/Header'
 
-describe("homepage tests", () => {
+describe("Header tests", () => {
 it('should render the header', () => {
   render(<Header />)
   expect(screen.getByRole('heading', { level: 1, name: 'Bistro Restaurant' })).toBeDefined()

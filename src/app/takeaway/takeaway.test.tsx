@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import Takeaway from './page';
 
 
-describe("menu tests", () => {
+describe("Takeaway tests", () => {
 
     it('should render the takeaway page', () => {
         render(<Takeaway />)
