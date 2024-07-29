@@ -93,7 +93,7 @@ const Takeaway: React.FC = () => {
             clearCart={handleClearCart}
           />
         </Drawer>
-          <StyledBadge badgeContent={getTotalItems(cartItems)} color='warning' onClick={() => setCartOpen(true)}/>
+          <StyledBadge data-testid='cartbutton' badgeContent={getTotalItems(cartItems)} color='warning' onClick={() => setCartOpen(true)}/>
         <Grid container spacing={3}>
           {products.map(item => (
             <Grid item key={item.id} xs={12} sm={4}>

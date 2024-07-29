@@ -33,7 +33,7 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart, clearCart
           removeFromCart={removeFromCart}
         />
       ))}
-      <h2>Total: £{calculateTotal(cartItems).toFixed(2)}</h2>
+      <h2>Total Sum: £{calculateTotal(cartItems).toFixed(2)}</h2>
       <Input placeholder='Your Name' value={customerName} onChange={handleInputChange} />
       <StyledButton onClick={(e) => clearCart(e as unknown as React.FormEvent<HTMLFormElement>, customerName)}>
         Check Out

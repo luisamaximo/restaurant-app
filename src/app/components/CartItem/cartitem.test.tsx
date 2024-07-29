@@ -1,7 +1,7 @@
 import { expect } from 'vitest'
-import { fireEvent, render, screen } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 import CartItem from './CartItem';
-import { appendMutableCookies } from 'next/dist/server/web/spec-extension/adapters/request-cookies';
+
 describe("CartItem tests", () => {
     const mockItem = {
         "id": 1,
