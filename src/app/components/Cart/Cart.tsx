@@ -1,17 +1,25 @@
+import React, { useState } from 'react';
 import CartItem from '../CartItem/CartItem';
-import { Wrapper } from './Cart.styles';
-//Types
+import { StyledButton, Wrapper } from './Cart.styles';
 import { CartItemType } from '../../types/menuTypes';
+import { Input } from '@mui/material';
 
 type Props = {
   cartItems: CartItemType[];
   addToCart: (clickedItem: CartItemType) => void;
   removeFromCart: (id: number) => void;
+  clearCart: (e: React.FormEvent<HTMLFormElement>, customerName: string) => void;
 };
 
-const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
+const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart, clearCart }) => {
+  const [customerName, setCustomerName] = useState('');
+
   const calculateTotal = (items: CartItemType[]) =>
     items.reduce((ack: number, item) => ack + item.amount * item.price, 0);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setCustomerName(event.target.value);
+  };
 
   return (
     <Wrapper>
@@ -26,6 +34,10 @@ const Cart: React.FC<Props> = ({ cartItems, addToCart, removeFromCart }) => {
         />
       ))}
       <h2>Total: £{calculateTotal(cartItems).toFixed(2)}</h2>
+      <Input placeholder='Your Name' value={customerName} onChange={handleInputChange} />
+      <StyledButton onClick={(e) => clearCart(e as unknown as React.FormEvent<HTMLFormElement>, customerName)}>
+        Check Out
+      </StyledButton>
     </Wrapper>
   );
 };
